@@ -125,8 +125,8 @@ const signInHandler = () => {
   errorRef.innerText = "";
 
   if (emailRef.value === "admin@admin.com")
-    location.replace("/Ecommjavascript/admin/admin.html");
-  else location.replace("/Ecommjavascript/user/index.html");
+    location.replace("/E-Commerce-Site/Ecommjavascript/admin/admin.html");
+  else location.replace("/E-Commerce-Site/Ecommjavascript/user/index.html");
 };
 
 const validateEmail = (email) => {
@@ -157,7 +157,7 @@ const reghandler = () => {
       });
 
       localStorage.setItem("users", JSON.stringify(users));
-      location.href = "/Ecommjavascript/user/signin.html";
+      location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
     } else errorRef.innerText = "Passwords are incorrect";
   } else {
     errorRef.innerText = "Fields are empty";
@@ -266,7 +266,7 @@ const addToCartHandler = (productId) => {
   const userId = sessionStorage.getItem("userId");
 
   if (!userId) {
-    location.href = "/Ecommjavascript/user/signin.html";
+    location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
     return;
   }
   const products = JSON.parse(localStorage.getItem("products"));
@@ -336,7 +336,7 @@ const loadCartPage = () => {
       totalRef.textContent = `₹ ${total}`;
     }
   } else {
-    location.href = "/Ecommjavascript/user/signin.html";
+    location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
   }
 };
 
@@ -363,12 +363,12 @@ const checkOutHandler = () => {
       localStorage.removeItem(cartKey);
       localStorage.setItem("orders", JSON.stringify(orders));
       updateCartCount();
-      location.href = "/Ecommjavascript/user/order.html";
+      location.href = "/E-Commerce-Site/Ecommjavascript/user/order.html";
     } else {
-      location.href = "/Ecommjavascript/user/index.html";
+      location.href = "/E-Commerce-Site/Ecommjavascript/user/index.html";
     }
   } else {
-    location.href = "/Ecommjavascript/user/signin.html";
+    location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
   }
 };
 
@@ -404,10 +404,10 @@ const loadOrderPage = () => {
       }
       tableRef.innerHTML = body;
     } else {
-      location.href = "/Ecommjavascript/user/index.html";
+      location.href = "/E-Commerce-Site/Ecommjavascript/user/index.html";
     }
   } else {
-    location.href = "/Ecommjavascript/user/signin.html";
+    location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
   }
 };
 
@@ -469,10 +469,10 @@ const loadAdminOrderPage = () => {
         });
       }
     } else {
-      location.href = "/Ecommjavascript/user/index.html";
+      location.href = "/E-Commerce-Site/Ecommjavascript/user/index.html";
     }
   } else {
-    location.href = "/Ecommjavascript/user/signin.html";
+    location.href = "/E-Commerce-Site/Ecommjavascript/user/signin.html";
   }
 };
 
@@ -523,11 +523,11 @@ const saveOrUpdateHandler = () => {
   }, 2000);
 
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "/Ecommjavascript/admin/admin.html";
+  location.href = "/E-Commerce-Site/Ecommjavascript/admin/admin.html";
 };
 
 const editProductHandler = (id) => {
-  window.location.href = `/Ecommjavascript/admin/addproduct.html=${id}`;
+  window.location.href = `/E-Commerce-Site/Ecommjavascript/admin/addproduct.html=${id}`;
 };
 
 const populateProduct = (product) => {
@@ -578,7 +578,7 @@ window.addEventListener("load", () => {
   }
 
   if (
-    location.pathname === "/Ecommjavascript/admin/addproduct.html"
+    location.pathname === "/E-Commerce-Site/Ecommjavascript/admin/addproduct.html"
   ) {
     let params = new URL(document.location).searchParams;
     let productId = params.get("id");
