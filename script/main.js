@@ -125,7 +125,7 @@ const signInHandler = () => {
   errorRef.innerText = "";
 
   if (emailRef.value === "admin@admin.com")
-    location.replace("/E-Commerce-Site/admin/admin.html");
+    location.replace("https://nandhineee.github.io/E-Commerce-Site/admin/admin.html");
   else location.replace("/E-Commerce-Site/user/index.html");
 };
 
@@ -485,7 +485,7 @@ const saveOrUpdateHandler = () => {
   const toastRef = document.getElementById("toast");
   const toastMessageRef = document.getElementById("toastMessage");
 
-  let products = JSON.parse(localStorage.getItem("products")) || [];
+  let products = JSON.parse(localStorage.getItem("products"));
 
   const id = parseInt(idRef.value);
   const existingProductIndex = products.findIndex(
@@ -523,11 +523,11 @@ const saveOrUpdateHandler = () => {
   }, 2000);
 
   localStorage.setItem("products", JSON.stringify(products));
-  location.href = "/E-Commerce-Site/admin/admin.html";
+  location.href = "https://nandhineee.github.io/E-Commerce-Site/admin/admin.html";
 };
 
 const editProductHandler = (id) => {
-  window.location.href = `/E-Commerce-Site/admin/addproduct.html=${id}`;
+  window.location.href = `https://nandhineee.github.io/E-Commerce-Site/admin/addproduct.html=${id}`;
 };
 
 const populateProduct = (product) => {
@@ -564,7 +564,7 @@ window.addEventListener("load", () => {
   // if (location.pathname === "/pages/admin/index.html") {
   //   loadAdminHomePage();
 
-  if (location.pathname === "/E-Commerce-Site/admin/admin.html") {
+  if (location.pathname === "https://nandhineee.github.io/E-Commerce-Site/admin/admin.html") {
     loadAdminHomePage();
   }
 
@@ -576,12 +576,12 @@ window.addEventListener("load", () => {
     loadOrderPage();
   }
 
-  if (location.pathname === "/E-Commerce-Site/admin/addproduct.html") {
+  if (location.pathname === "https://nandhineee.github.io/E-Commerce-Site/admin/addproduct.html") {
     loadAdminOrderPage();
   }
 
   if (
-    location.pathname === "/E-Commerce-Site/admin/addproduct.html"
+    location.pathname === "https://nandhineee.github.io/E-Commerce-Site/admin/addproduct.html"
   ) {
     let params = new URL(document.location).searchParams;
     let productId = params.get("id");
