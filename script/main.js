@@ -414,8 +414,6 @@ const loadOrderPage = () => {
 const loadAdminOrderPage = () => {
   const tableRef = document.getElementById("table");
 
-  console.log("hiiiiiii");
-
   if (sessionStorage.getItem("userId")) {
     if (localStorage.getItem("orders")) {
       const orders = JSON.parse(localStorage.getItem("orders"));
@@ -576,12 +574,12 @@ window.addEventListener("load", () => {
     loadOrderPage();
   }
 
-  if (location.pathname === "https://nandhineee.github.io/E-Commerce-Site/admin/addproduct.html") {
+  if (location.pathname === "/E-Commerce-Site/admin/addproduct.html") {
     loadAdminOrderPage();
   }
 
   if (
-    location.pathname === "https://nandhineee.github.io/E-Commerce-Site/admin/addproduct.html"
+    location.pathname === "/E-Commerce-Site/admin/addproduct.html"
   ) {
     let params = new URL(document.location).searchParams;
     let productId = params.get("id");
